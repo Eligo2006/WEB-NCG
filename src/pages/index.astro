@@ -1,0 +1,46 @@
+---
+// src/pages/index.astro
+
+// 1. Importamos tus componentes de React
+// (Asegúrate de que las rutas coincidan con las carpetas donde guardaste los archivos .tsx)
+import Header from '../components/Header.tsx';
+import HeroSection from '../components/HeroSection.tsx';
+import Footer from '../components/Footer.tsx';
+
+import '../styles/globals.css';
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Título de la pestaña actualizado -->
+    <title>NCG Servicios Generales S.A.C.</title>
+
+    <!-- ÍCONO DE LA PESTAÑA (Favicon) -->
+    <link rel="icon" type="image/png" href="/assets/images/app_logo.png" />
+
+    <!-- Fuentes de Google: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Usamos 'class' en lugar de 'className' para el <main> -->
+    <main class="relative min-h-screen bg-slate-50">
+
+      <!--
+        Usamos client:load en los componentes que tengan botones,
+        menús desplegables o interactividad de React.
+      -->
+      <Header client:load />
+      <HeroSection client:load />
+
+      <!-- Si el Footer es pura información estática, puedes dejarlo así sin client:load -->
+      <Footer />
+
+    </main>
+  </body>
+</html>

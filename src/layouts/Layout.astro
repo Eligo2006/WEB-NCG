@@ -1,0 +1,49 @@
+---
+// Importamos tus estilos globales
+import '../styles/tailwind.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+// Valores por defecto profesionales para el SEO de NCG
+const { 
+  title = "NCG Servicios Generales S.A.C. — Inventario y Valuación", 
+  description = "Empresa peruana especializada en inventario físico, valuación de activos y consultoría para empresas líderes desde 2009. Calidad y eficiencia garantizadas." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    
+    <!-- Rutas de tu logo original que ya funcionan -->
+    <link rel="icon" type="image/png" href="/assets/images/app_logo.png?v=10" />
+    <link rel="shortcut icon" type="image/png" href="/assets/images/app_logo.png?v=10" />
+    
+    <!-- Metadatos de Astro -->
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Fuente Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-background text-foreground antialiased" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+    <slot />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

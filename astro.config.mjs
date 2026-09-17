@@ -6,9 +6,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   // Activamos el modo servidor para poder enviar correos de forma segura
   output: 'static',
-  build: {
-    format: 'file'
-  },
+
   integrations: [
     react(), 
     tailwind()
